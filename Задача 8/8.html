@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Прогресс</title>
+    <style>
+        .button {
+            background-color: rgb(59, 182, 219);
+            border: none;
+            padding: 1vh;
+            color: #ffffff;
+        }
+        .button:hover{
+            background-color: rgb(0, 99, 212);
+        }
+    </style>
+</head>
+<body>
+    <h3>Прогресс-бар</h3>
+    <div class="progress-container">
+        <progress class="progress-bar" id="progressBar" value="0" max="100"></progress>
+        <span class="percentage" id="percentage">0%</span>
+    </div>
+    <button class="button" id="increaseButton"><b>Увеличить значение</b></button>
+
+    <script>
+        document.getElementById('increaseButton').addEventListener('click', function() {
+            // Получаем элемент прогресс-бара по его id
+            const progressBar = document.getElementById('progressBar');
+            // Преобразуем текущее значение прогресс-бара из строки в целое число
+            let value = parseInt(progressBar.value);
+            // Увеличиваем значение на 5, но не больше 100%
+            value = value + 5 > 100 ? 100 : value + 5;
+            // Устанавливаем новое значение прогресс-бара
+            progressBar.value = value;
+            // Обновляем процентное значение
+            document.getElementById('percentage').textContent = value + '%';
+
+            // Если значение прогресс-бара достигает 100%, скрываем кнопку и обновляем текст
+            if (value === 100) {
+                document.getElementById('increaseButton').style.display = 'none';
+                document.getElementById('percentage').textContent = '100% - Максимум';
+                document.getElementById('underline').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

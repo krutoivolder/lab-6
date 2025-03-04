@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Повторюшка</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="inputText" placeholder="Введите текст">
+        <span id="outputText"></span>
+    </div>
+
+    <script>
+        var inputField = document.getElementById('inputText'); // Находим поле ввода по его ID
+        var outputText = document.getElementById('outputText'); // Находим элемент для отображения текста по его ID
+        
+        inputField.addEventListener('input', function() { // Добавляем обработчик события "input" на поле ввода
+            outputText.textContent = inputField.value; // Обновляем текст рядом с полем ввода
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Анимееееееееееееееееееее</title>
+</head>
+
+<body>
+
+  <body>
+    <div class="gallery">
+      <img id="mainImage" class="main-image" src="images/image-6.jpg" alt="Main Image" title="5 лучших аниме Хаяо Миядзаки">
+      <div class="thumbnails" id="thumbnails">
+          <img class="thumbnail" src="images/image-1-thumb.jpg" data-full="images/image-1.jpg" alt="img 1" title="Навсикая из долины ветров">
+          <img class="thumbnail" src="images/image-2-thumb.jpg" data-full="images/image-2.jpg" alt="img 2" title="Мой сосед Тороро">
+          <img class="thumbnail" src="images/image-3-thumb.jpg" data-full="images/image-3.jpg" alt="img 3" title="Унесенные призраками">
+          <img class="thumbnail" src="images/image-4-thumb.jpg" data-full="images/image-4.jpg" alt="img 4" title="Ходячий замок">
+          <img class="thumbnail" src="images/image-5-thumb.jpg" data-full="images/image-5.jpg" alt="img 5" title="Ведьмина служба доставки">
+      </div>
+  </div>
+
+  <script>
+      document.getElementById('thumbnails').addEventListener('click', function(event) { // Получаем элемент с id 'thumbnails' и добавляем обработчик события клика
+          if (event.target.classList.contains('thumbnail')) { // Проверяем, содержит ли элемент, на который кликнули, класс 'thumbnail'
+              document.getElementById('mainImage').src = event.target.getAttribute('data-full'); // Если содержит, меняем src основного изображения на src кликнутого миниатюры
+          }
+      });
+  </script>
+</body>
+</html>

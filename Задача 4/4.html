@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Какулятор</title>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="num1">
+        <span>+</span>
+        <input type="number" id="num2">
+        <span>=</span>
+        <span id="result">?</span>
+    </div>
+
+    <br>
+
+    <button id="calculate">Нажмите чтобы сложить</button>
+
+    <script>
+        document.getElementById('calculate').addEventListener('click', function() { // Находим кнопку по её ID и добавляем обработчик события "click"
+            var num1 = parseFloat(document.getElementById('num1').value); // Находим первое поле ввода и получаем его значение
+            var num2 = parseFloat(document.getElementById('num2').value); // Находим второе поле ввода и получаем его значение
+            
+            var sum = num1 + num2; // Выполняем сложение
+
+            document.getElementById('result').textContent = sum; // Находим элемент для вывода результата и обновляем его текст
+        });
+    </script>
+</body>
+</html>
